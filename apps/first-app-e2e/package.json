@@ -1,0 +1,10 @@
+{
+  "name": "@nx-experiment/first-app-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@nx-experiment/first-app"
+    ]
+  }
+}
