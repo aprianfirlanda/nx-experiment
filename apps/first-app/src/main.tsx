@@ -5,6 +5,10 @@ import RootLayout from './app/layouts/RootLayout';
 import ErrorPage from './app/pages/ErrorPage';
 import Home from './app/pages/Home';
 import About from './app/pages/About';
+import ConsoleLayout from './app/layouts/ConsoleLayout';
+import Dashboard from './app/pages/console/Dashboard';
+import Settings from './app/pages/console/Settings';
+import Login from './app/pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +17,18 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
+      { path: 'home', element: <Home /> },
       { path: 'about', element: <About /> },
+      { path: 'login', element: <Login /> },
+      {
+        path: 'console',
+        element: <ConsoleLayout />,
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: 'dashboard', element: <Dashboard /> },
+          { path: 'setting', element: <Settings /> },
+        ],
+      },
     ],
   },
 ]);
