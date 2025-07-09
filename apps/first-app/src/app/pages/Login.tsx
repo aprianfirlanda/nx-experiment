@@ -4,7 +4,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   function handleLogin() {
-    // fake login logic here
+    localStorage.setItem('token', 'dummy-auth-token');
     navigate('/console/dashboard');
   }
 

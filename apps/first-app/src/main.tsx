@@ -9,6 +9,7 @@ import ConsoleLayout from './app/layouts/ConsoleLayout';
 import Dashboard from './app/pages/console/Dashboard';
 import Settings from './app/pages/console/Settings';
 import Login from './app/pages/Login';
+import { consoleLoader } from './app/layouts/consoleLoader';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: 'console',
     element: <ConsoleLayout />,
+    loader: consoleLoader,
     children: [
       { index: true, element: <Dashboard /> },
       { path: 'dashboard', element: <Dashboard /> },
@@ -39,6 +41,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </StrictMode>
 );
